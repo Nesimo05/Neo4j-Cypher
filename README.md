@@ -25,8 +25,9 @@ MATCH (person:Person)
 Verwende die `WHERE`-Klausel, um Bedingungen für die gefundenen Muster anzugeben, z.B. Personen mit einem bestimmten Namen.
 
 ```cypher
-MATCH (person:Person)
-WHERE person.name = 'John Doe'
+MATCH (n:Label)
+WHERE n.property = 'Wert'
+RETURN n;
 ```
 
 ## 3. RETURN
@@ -41,8 +42,9 @@ RETURN person.name
 Verwende `AS`, um Aliasse für Werte oder Muster zu erstellen, z.B. den Namen als Alias.
 
 ```cypher
-MATCH (person:Person)
-RETURN person.name AS personName
+// ALIAS für eine einfache Spalte
+MATCH (n:Person)
+RETURN n.name AS personenName;
 ```
 
 ## 5. MERGE
